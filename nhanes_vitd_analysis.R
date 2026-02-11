@@ -75,6 +75,26 @@ results <- nhanes_all %>%
   arrange(Age, Sex) %>%
   select(Age, Sex, Percent_Low_VitD)
 
+# Bar plot of percent deficiency by Age and Sex
+
+vitd_plot <- ggplot(results, aes(x = Age, y = Percent_Low_VitD, fill = Sex)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
+  labs(
+    title = "Weighted Prevalence of Vitamin D Deficiency in Adults",
+    x = "Age Group",
+    y = "Percent with Low Vitamin D (%)",
+    fill = "Sex"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5)
+  )
+
+# Save the plot to file
+
+print(vitd_plot)
+ggsave("VitaminD_Deficiency_by_AgeSex.png", plot = vitd_plot, width = 8, height = 6, dpi = 300)
+
 # Save results and print
 
 write.csv(results, "results.csv", row.names = FALSE)
