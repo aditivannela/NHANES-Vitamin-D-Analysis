@@ -20,7 +20,7 @@ All datasets are publicly available from the CDC NHANES website:
 ## Visualization
 The plot below summarizes the weighted prevalence of Vitamin D deficiency by age group and sex:
 
-![Vitamin D Deficiency by Age and Sex](VitaminD_Deficiency_by_AgeSex.png)
+![Vitamin D Deficiency by Age and Sex](Downloads/VitaminD_Deficiency_by_AgeSex.png)
 
 ## How to run
 1. Make sure all four `.XPT` files are in the same folder as the script.
